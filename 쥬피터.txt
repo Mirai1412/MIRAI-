@@ -1,0 +1,10 @@
+m 글쓰기 
+y 코드쓰기
+inplace=True 원본에 반영
+filt 원하는 값을 찾는다
+df.loc 값을 찾은걸 수정가능
+df.loc[filt,['last','email']]= ['Park', 'mrpark@gmail.com']
+필터값도 찾아서 수정가능
+lower 소문자
+upper 대문자
+columns 칼럼

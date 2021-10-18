@@ -1,0 +1,60 @@
+php artisan storage:link 이미지링크
+
+부트스트랩
+composer require laravel/ui
+php artisan ui bootstrap
+npm install && npm run dev
+
+테일윈드
+npm install -D tailwindcss
+npx tailwindcss init
+npm run dev
+
+laravel & vue
+composer require laravel/ui
+php artisan ui vue
+npm install --> nodemodules로 땡겨옴
+npm update
+npm run watch
+php artisan ui bootstrap //  bootstrap 날라감
+npm install 
+webpack.mix.js 에 
+
+.vue() 추가
+
+.postCss('resources/css/app.css','public/css',[
+        require('postcss-import'),
+        require('tailwindcss'),
+    ]) 
+추가 tailwindcss
+
+php artisan make:migration create_post
+_user_table
+작성후
+ php artisan migrate
+
+<like-button : post="{{ $post }}"/>
+ props : ['post'] 받는다
+ ({{  $post -> likes }}) ->> 블레이드 파일에 적어 줘야 가져온다.
+axios.post('/like/'+this.post.id)
+
+vue devtools beta
+
+count 수
+
+Alpine.js
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
+npm install sweetalert2
+
+<comment-list :post="{{ $post }}"/>
+포스트값을 받아온다
+:loginuser="{{ auth()->user()->id }}"
+로그인 유저 아이디값을 받아온다.
+props:['post','loginUserId'],
+뷰에서 두개 깂을 받아온다.

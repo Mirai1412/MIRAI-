@@ -1,0 +1,32 @@
+부트스트랩
+composer require laravel/ui
+php artisan ui bootstrap
+npm install && npm run dev
+
+테일윈드
+npm install -D tailwindcss
+npx tailwindcss init
+npm run dev
+
+laravel & vue
+composer require laravel/ui
+php artisan ui vue
+npm install --> nodemodules로 땡겨옴
+npm update
+npm run watch
+php artisan ui bootstrap //  bootstrap 날라감
+npm install 
+webpack.mix.js 에 
+
+.vue() 추가
+
+.postCss('resources/css/app.css','public/css',[
+        require('postcss-import'),
+        require('tailwindcss'),
+    ]) 
+추가 tailwindcss
+
+app.js 에 컴포넌트 등록
+
+원하는곳에 id박고 - 최상위 폴더에 1번만 박으면 된다
+ex) <app/>

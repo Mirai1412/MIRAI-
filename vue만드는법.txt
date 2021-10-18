@@ -1,0 +1,29 @@
+vue create frontend
+cd frontend
+vue add router
+(또는 npm install --save vue-router)
+vue add vuetify (옵션)
+npm install --save axios
+npm install --save vuex (옵션)
+
+테일윈드
+<head>y
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/app.css" rel="stylesheet">
+</head>
+
+npm install --save-dev node-sass sass-loader
+
+lang="scss"     scss 사용법
+
+// 이전 버전의 sass-loader가 있다면 삭제
+npm uninstall sass-loader 
+
+//10 버전으로 다시 설치
+npm i sass-loader@10
+
+npm start
+"start": "php artisan serve | npm run hot"
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
