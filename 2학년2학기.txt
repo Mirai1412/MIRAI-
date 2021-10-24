@@ -2,5 +2,3 @@
 - HTML5, CSS3, JavaScript(ES6)를 이용한 프론트엔드 개발 
 
 - React, Vue, Angular 등 JavaScript 프레임워크에서의 개발 경험
-
-ppt 미리캔버스

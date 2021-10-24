@@ -1,10 +1,131 @@
-m 글쓰기 
-y 코드쓰기
-inplace=True 원본에 반영
-filt 원하는 값을 찾는다
-df.loc 값을 찾은걸 수정가능
-df.loc[filt,['last','email']]= ['Park', 'mrpark@gmail.com']
-필터값도 찾아서 수정가능
-lower 소문자
-upper 대문자
-columns 칼럼
+# Jupyter Notebook 소개
+## Code cell과 markdown Cell
+### Code cell
+진하게 나타나고 기울여쓰기 하고
+
+### Markdown cell
+
+[영진전문대학교 컴퓨터정보계열](http://computer.yju.ac.kr/)
+
+| 이름 | 학번 | 성별 |
+| ---- | ----- | ---- |
+| 임채환 | 1801233 | 남 |
+| 임땡땡 | 1234567 | 남 |
+
+![컴퓨터정보계열](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/330px-Image_created_with_a_mobile_phone.png)
+
+DataFrame의 각 칼럼은 Series
+
+df = pd.DataFrame({내용})
+
+df["보고싶은 column"] 하면 그 해당 행값 출력
+
+DataFrame에서 하나의 칼럼을 선택하면 그 결과는 Series임
+
+test1 = pd.Series([1,2,3], name="Age")
+Series의 생성 방법
+
+df["columns"].max() = 그 행에서 가장 높은 값 출력(글자도 가능)
+
+df["columns"].min() = 그 행에서 가장 낮은 값 출력0
+
+df.describe() = DataFrame의 숫자 데이터에 대한 개요와 평균 값을 제공 (문자 데이터도 되긴 하나 고려하지 않음) 
+	       
+df.columns = DataFrame이 가지고 있는 칼럼을 전부 보여줌
+
+df.columns = ["test1","test2","test3"] = 칼럼 명을 바꿀수 있음
+
+각 칼럼 끼리 더하는것도 가능함
+Ex) df['first'] + ' ' + df['last'] = first last
+
+df.head(N) = N만큼 처음부터 값을 보여줌
+
+df.tail(N) = N만큼 끝부터 값을 보여줌
+
+df.drop(columns) = 해당 칼럼을 삭제함
+
+df.rename(columns={‘컬럼’ : ‘변경 이름’}) = 컬럼의 이름을 변경시킴
+
+데이터를 불러오려면
+test = pd.read_csv("불러올 데이터") 하면된다
+
+df.dtypes = DataFrame과 Seriese의 속성 값을 보여줌
+
+df.info() = DataFrame에 대한 기술적 정보를 제공
+
+df.columns = [x.upper() for x in df.columns] = 칼럼 이름을 대문자로 변경시켜줌
+
+df.columns = [x.lower() for x in df.columns] # 소문자로 변경
+
+칼럼을 선택하려면 괄호[]안에 원하는 칼럼을 적으면된다
+
+칼럼이 선택되고 반환하는것은 pandas의 Seriese임
+
+type(df["Name"]) = 해당 칼럼의 type를 보여줌
+
+df["Name"].shape = 행과 열의 갯수를 나타냄
+
+칼럼을 다중으로 선택하고 싶다면 
+[["test1","test2"]]이런식으로 선택하면된다
+
+다중 선택으로 조건식을 쓸수있음
+df2 = df[df["Age"] > 23] 23살 보다 많은 놈을 선택
+
+그냥 조건식은 df["Age"] > 23 으로 가능
+결과값은 index마다 True False로 나옴
+
+또다른 조건식으로 isin()이 있다 isin()은 조건식과 유사하나
+해당 함수의 인자로 제공된 리스트에 있는 값을 가진 각행에 대해
+True를 반환함
+Ex) class_23 = titanic[titanic["Pclass"].isin([2,3])]
+설명 : class_23은 타이타닉의 칼럼 Pclass중 2와 3이 포함된 것만 
+이때 굳이 isin()함수 말고 연산자 | 연산자를 사용해도됨
+Ex) class_23 = titanic[(titanic["Pclass"] == 2) | (titanic["Pclass"] == 3)]
+
+loc = 행과 열 이름을 사용해 특정 행과 열을 추출시 사용
+df.loc[행 인덱스, 열 인덱스]
+Ex) df.loc[2, ["Name]] 2번째 행에서 칼럼 값이 Name인 칼럼에서 값을 추출
+
+iloc = 테이블에서의 위치를 이용해 특정 행과 열을 추출시 사용
+df.iloc[행 인덱스, 열 인덱스]
+Ex) df.iloc[0]은 전체 DF에서 0번째 행에 있는 값들만 추출한다
+
+pd.set_option("display.max_columns", 100) = 표시될 칼럼 수를 100으로 늘린다
+
+pd.set_option("display.max_rows", 20) = 표시될 행 수를 20으로 늘린다
+
+df.set_index("test1") = 새로운 인덱스를 추가해줌 근데 원본에는 추가안되있음
+
+inplace=True = 추가한 값을 원본에도 추가해줌
+
+df.sort_values(by=’칼럼’, ascending=True) = 해당칼럼을 오름차순으로 정렬해줌
+기본적으로 sort_values는 오름차순 정렬이다 sort_values(ascending=True)가 기본값
+
+df.sort_values(by=[‘test1’, ‘test2’], ascending=False)
+정렬 기준을 여러 개 설정 하는 것도 가능함 하지만 series가 2개라서 ascending도
+2개가 있어야함 ascending=[True, True] 식으로 사용하면 된다.
+
+df.sort_index(ascending=False) = 인덱스를 내림차순으로 정렬해줌
+(sort_index는 index를 기준으로 정렬할 때 사용함)
+근데 이거해도 원본은 그대로 inplace=True를 잊지말자
+
+df['full_name'].str.split(' ') = 해당 칼럼의 값안에 ' '이 있다면 분리된 값을 출력해주고 그 값을 다른 칼럼에 할당하고자 한다면 expand인자를 사용한다
+추가정보) df[‘full_name’].str.split(‘ ‘, ‘_’)로 공백을 _로 변경시키는 것도 가능
+
+df[‘full_name’].str.split(‘ ‘, expand=True) = 분리된 값을 각각 다른 칼럼으로 표시해줌
+Ex) full_name = Gildong hong이면 Gildong과 hong을 다른 칼럼에 배치하여 표시해줌
+Ex) df[[‘first’, ‘last’]] = df[‘full_name’]str.split(‘ ‘, expand=True)
+   - first에는 Gildong이 last에는 hong이 들어간다
+
+df[‘칼럼’].str.len() = 해당 칼럼의 index의 글자의 길이
+
+df.append({‘칼럼’ : ‘열 값’}, ignore_index=True) = 새로운 값을 추가를 해준다
+append는 새로운 레코드를 기존 DataFrame에 추가할 때 사용함
+append는 각각의 열의 이름에 맞춰 결합을 시켜줌
+쉽게 설명하면 df1에 df2를 합칠 때 같은 칼럼이 있으면 합쳐서 나열하고
+만약 다른 칼럼이 있으면 NaN처리함 
+
+ nlargest() 함수는 해당 칼럼에서 상위 N개의 결과를 볼 수 있게 해준다.
+Ex)df.nlargest(10, ‘연봉’)[[‘국가’, ‘나이’, ‘성별’]] = 연봉 Top10의 다른 정보까지 출력
+
+Nsmallest() 함수는 하위 N개의 결과를 볼 수 있게 해줌

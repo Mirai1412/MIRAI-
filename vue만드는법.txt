@@ -27,3 +27,17 @@ npm start
 "start": "php artisan serve | npm run hot"
 
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+npm install --save vue-router
+src router 안에 router.js 작성
+import Menu from '@/components/menu.vue'
+  {path: '/menu',name: 'Menu',component: Menu},
+
+app.vue에 <router-view/> 작성
+    <Header/>
+      <router-view/> 
+    <Buttom/>
+안에 라우터 뷰 부분은 주소에 따라 변경
+script도 따로 추가x
+
+

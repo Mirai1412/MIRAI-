@@ -4,7 +4,7 @@ php artisan make:controller PostControllers
 
 DateBase
 php artisan make:model {name} -m c//컨트롤러까지생성
-
+왠만하면 같이만들자
 migrations 
 
 파일에 원하는 데이터베이스 항목작성후
