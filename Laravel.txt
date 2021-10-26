@@ -1,8 +1,19 @@
+테일윈드
+부트스트랩
+스타터키트
+
 Controllers
 php artisan make:controller PostControllers
 --resource // index.creat등등 자동생성
 
+factories
+php artisan make:factory PostFactory --model=Post
+//model 지정 
+
 DateBase
+php artisan make:migration create_posts_table
+php artisan make:migration create_post_user
+
 php artisan make:model {name} -m c//컨트롤러까지생성
 왠만하면 같이만들자
 migrations 
@@ -10,16 +21,29 @@ migrations
 파일에 원하는 데이터베이스 항목작성후
 php artisan migrate
 //안되면 :rollback
+
 MEDIUMTEXT// 문자형 데이터 타입
 $table->foreignId('user_id')
         ->constrained()
         ->onDelete('cascade');
-//사용자가 나가면 같이 삭제해달라는것
-
-factories
-php artisan make:factory PostFactory --model=Post
-//model 지정 
+//사용자가 나가면 같이 삭제해달라는
 
 요청
 <form action="{{ route('post.store') }}" method="POST">
 @csrf
+
+php artisan make:factory PostUserFactory
+
+php artisan tinker
+use App\Models\User
+User::factory()->count(5)-> create();
+
+
+use App\Models\Post
+Post::factory()->count(5)->create();
+
+use App\Models\PostUser
+PostUser::factory()->count(5)->create();
+
+
+

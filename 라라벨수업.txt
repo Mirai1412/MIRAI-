@@ -78,36 +78,8 @@ $table->foreignId('post_id')->constrained()
 	b. 특정 댓글 수정
 	c. 특정 댓글 삭제
 	d. 새로운 댓글 등록
-----------------------------------------------------------------------------------------------
-web.php
-Route::get(url, 처리할 로직을 클로저로 작성하거나, 컨트롤러의 메소드로 연결);
-Route::get('/comments/{comment_id}',[CommentsController::class,'index'])->name('comments.index');
-	http::/localhost:8000/comments/3		         href="route('comments.index')"
 
-Route::patch or put('/comments/{comment_id}',[CommentsController::class,'update'])->name('comments.update');
-
-controller
-	public function update(Request $request, $comment_id){
-
-	// Request $request 요청정보
-		
-	$request ['comment'];
-	or
-	$request -> input('comment');
-	or
-	$comment = $request ->comment;
-
-	$comment = Comment::find($comment_id);
-	/* select * from comments where id =?  */
-
-	$comment->comment = $comment;
-	$comment->save();
-
-	return view('comment.show', ['comment' => $comment]);
-	return view('comment.show', compact('comment'));
-	return view('comment.show')->with(['comment' => $comment]);
-	//암거나
-	vue == return '$comment'
+vue == return '$comment'
 	}	
 <template>
 	<buttom @click = "updat">
@@ -128,46 +100,8 @@ methos : {
 	).catch( );	
 	}
 }
-----------------------------------------------------------------------------------------------
-Route::delete('/comments/{comment_id}',[CommentsController::class,'destroy'])->name('comments.delete');
 
-controller
-public function destroy ($comment_id){
-	
-	$comment = Comment::find($comment_id);
-	$comment-> delete();
-	// delete from comments where id = ?
-}
-
-vue 
-	delete( ) {
-	 	axios.delete('/comments/' + this.comment.id,{
-		}).then(reponse=>{
-			// comments 다시일어온다..
-		})
-		.catch( );	
-	}
-----------------------------------------------------------------------------------------------
-
-Route::post or put('/comments/{post_id}',[CommentsController::class,'store'])->name('comments.store')
-//store 글들이 저장됨
-
-controller
-public function store(Request $requset, $post_id){
-	
-	$comment = new Comment;
-	$comment->user_id = auth( )-user( )->id;
-	$comment->post_id = $post_id;
-	$comment->comment = $request->comment;
-
-	$comment->save; /* id, created_at, updated_at */
-
-
-}
-
-vue 
-
-----------------------------------------------------------------------------------------------
+// 문서에 deleting modles
 
 // sort values in an array in ascending // 자동코딩 
 
@@ -183,3 +117,8 @@ web serve(Laravel)  	web browser(HTML, Vue compante,JS)
 view php 파일
 blade component
 blade지시자 @if
+
+php artisan tinker
+use App\Models\Comment 
+Comment::factory()->count(10)->create();
+
