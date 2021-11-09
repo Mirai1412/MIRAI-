@@ -1,32 +1,59 @@
-부트스트랩
-composer require laravel/ui
-php artisan ui bootstrap
-npm install && npm run dev
+"start": "php artisan serve | npm run watch"
 
-테일윈드
-npm install -D tailwindcss
-npx tailwindcss init
+스타터키트
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install
 npm run dev
+php artisan migrate
+
 
 laravel & vue
-composer require laravel/ui
+composer require laravel/ui    & npm install vue
 php artisan ui vue
 npm install --> nodemodules로 땡겨옴
+npm i vue-loader
+npm install vue-router
+ resources/js/router.js 
 npm update
-npm run watch
 php artisan ui bootstrap //  bootstrap 날라감
 npm install 
 webpack.mix.js 에 
 
 .vue() 추가
 
-.postCss('resources/css/app.css','public/css',[
+mix.js('resources/js/app.js', 'public/js').vue()
+    .postCss('resources/css/app.css','public/css',[
         require('postcss-import'),
         require('tailwindcss'),
-    ]) 
+    ])
+    .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps();
+
 추가 tailwindcss
 
-app.js 에 컴포넌트 등록
+app.js 
+
+require('./bootstrap');
+
+window.Vue = require('vue').default;
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
 
 원하는곳에 id박고 - 최상위 폴더에 1번만 박으면 된다
 ex) <app/>
+
+
+부트스트랩 ---------로그아웃 오류나면 해줘야함
+composer require laravel/ui
+php artisan ui bootstrap
+npm install && npm run dev
+
+테일윈드	------ 딱히안해도됨
+npm install -D tailwindcss
+npx tailwindcss init
+npm run dev

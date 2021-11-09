@@ -45,5 +45,7 @@ Post::factory()->count(5)->create();
 use App\Models\PostUser
 PostUser::factory()->count(5)->create();
 
+php artisan storage:link 
+
 
 

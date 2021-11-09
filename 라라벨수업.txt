@@ -122,3 +122,5 @@ php artisan tinker
 use App\Models\Comment 
 Comment::factory()->count(10)->create();
 
+권한 설정
+php artisan make:policy PostPolicy
