@@ -124,3 +124,6 @@ Comment::factory()->count(10)->create();
 
 권한 설정
 php artisan make:policy PostPolicy
+php artisan make:policy CommentPolicy --model=Comment
+네이밍 컴벤션이 아니면 AppServiceProvider 연결필요
+authorize
