@@ -122,6 +122,9 @@ php artisan tinker
 use App\Models\Comment 
 Comment::factory()->count(10)->create();
 
+Company::create(['name'=>'KIA']); 
+모델  protected $fillable = ['name'];
+
 권한 설정
 php artisan make:policy PostPolicy
 php artisan make:policy CommentPolicy --model=Comment

@@ -57,3 +57,9 @@ npm install && npm run dev
 npm install -D tailwindcss
 npx tailwindcss init
 npm run dev
+
+--------------------------------------------------------------------------------
+composer require laravel/ui
+php artisan ui vue
+php artisan ui vue --auth
+npm install --save vue-router

@@ -1,26 +1,37 @@
-테일윈드
-부트스트랩
 스타터키트
+
+web.php
+Route::resource('/cars', CarController::class);
+php artisan route:list 
 
 Controllers
 php artisan make:controller PostControllers
 --resource // index.creat등등 자동생성
 
-factories
-php artisan make:factory PostFactory --model=Post
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index','store');
+    }
+
+factory 
+php artisan make:factory PostFactory --model = Post
 //model 지정 
 
 DateBase
 php artisan make:migration create_posts_table
 php artisan make:migration create_post_user
 
-php artisan make:model {name} -m c//컨트롤러까지생성
+Model 
+php artisan make:model Car -m --resource   ---model, controllers 한번에 작성
 왠만하면 같이만들자
 migrations 
 
 파일에 원하는 데이터베이스 항목작성후
 php artisan migrate
 //안되면 :rollback
+image 는 string 
+Laravel -> migration ->foreignId 가운데에 가용타입이 다있다.
+
 
 MEDIUMTEXT// 문자형 데이터 타입
 $table->foreignId('user_id')
@@ -47,5 +58,8 @@ PostUser::factory()->count(5)->create();
 
 php artisan storage:link 
 
+BladeComponents
+php artisan make:component cars/Index
 
-
+join
+model -> 

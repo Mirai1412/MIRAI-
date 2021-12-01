@@ -1,0 +1,14 @@
+composer require laravel/jetstream
+php artisan jetstream:install inertia
+npm install
+npm run dev
+php artisan migrate
+
+콘솔에러시
+https://laravel-mix.com/docs/5.0/browsersync
+https://browsersync.io/docs/options/
+
+webpack
+mix.browserSync('http://localhost:8000'); 추가
+
+npm install browser-sync browser-sync-webpack-plugin@^2.3.0 --save-dev --legacy-peer-deps
