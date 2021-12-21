@@ -12,3 +12,5 @@ webpack
 mix.browserSync('http://localhost:8000'); 추가
 
 npm install browser-sync browser-sync-webpack-plugin@^2.3.0 --save-dev --legacy-peer-deps
+
+routeserviceprovider.php에서 대쉬보드 경로 수정가능
