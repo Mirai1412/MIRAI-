@@ -1,0 +1,71 @@
+자료구조
+메모리에 어떻게 저장하고 사용하는가 수정, 삽입, 삭제를 도와준다
+배열, 단일 연결리스트, 이중 연결리스트, 해쉬 테이블
+1. 순서 보정
+2. 중복 보정
+3. 검색 효율
+4. 수정 효율
+추상적 자료구조 (ADT)
+큐 - 먼저들어온 것이 먼저 나간다 EX) 주문, 전화 상담
+스택 - 맨위에부터 나간다 EX)뒤로가기 버튼
+
+네트워크
+
+알고리즘
+제안된 공간과 시간 안에서 데이터를 어떻게 처리할 것인지를 정해놓은 로직
+INPUT x -> FUNCTION f : -> OUTPUT f(x)
+Big o 시간 복잡도
+1. INPUT 사이즈에 따른 Big o 크기
+2. Space와 Time의 복잡도
+3. 사용할 자료구조
+
+oop
+
+데이터베이스
+
+HTML  
+1. HTML Tags
+2. 페이지 구조
+3. Semantic Tags
+
+CSS
+1. Styling
+2. Layouts
+3. 반응형
+4. Architecture BEM - Name 규칙
+5. Preprocessors Sass/Less/PostCss
+6. CSS Framework 
+Bootstrap/PostCss/Tailwind CSS/Material Ul
+
+JavaScript
+1. ES6 + Syntax
+ - Basic / let, const, function, object ...
+ - Advanced / prototype, Hoisting ...
+2. Browser APIs 
+ - DOM 
+ - Events
+3. TypeScript - 타입과 객채지향배열이 정해짐
+ - Types
+ - OOP
+4. JacaScript Framework + JavaScript
+ - React
+ - Vue
+ - Angular
+ - Svelte
+----------------SPA--------------
+Static Site Generators (SSG)
+Gatsby(React)
+GridSome(Vue)
+11ty(JS)
+
+Server Side Rendering (SSR)
+Next.js(React)
+Nuxt.js(Vue)
+Universal(Angular)
+Sapper(Svelte)
+
+SPA 구현
+
+React, Vue, Angular
+
+

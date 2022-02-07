@@ -61,5 +61,20 @@ php artisan storage:link
 BladeComponents
 php artisan make:component cars/Index
 
-join
-model -> 
+클라이언트
+view php 파일
+blade component
+blade지시자 @if
+
+php artisan tinker
+use App\Models\Comment 
+Comment::factory()->count(10)->create();
+
+Company::create(['name'=>'KIA']); 
+모델  protected $fillable = ['name'];
+
+권한 설정
+php artisan make:policy PostPolicy
+php artisan make:policy CommentPolicy --model=Comment
+네이밍 컴벤션이 아니면 AppServiceProvider 연결필요
+authorize

@@ -16,6 +16,7 @@ npm install --save vuex (옵션)
 npm install --save-dev node-sass sass-loader
 
 lang="scss"     scss 사용법
++ scoped 해당 파일에만 적용된다.
 
 // 이전 버전의 sass-loader가 있다면 삭제
 npm uninstall sass-loader 
@@ -40,4 +41,28 @@ app.vue에 <router-view/> 작성
 안에 라우터 뷰 부분은 주소에 따라 변경
 script도 따로 추가x
 
+index.html
+<head> // 이안에 링크들을 미리 설정해두면 된다.
+ex> 반응형 앱, 폰트, 아이콘, 파비콘(즐겨 찾기아이콘)
+<div id="app"> js적용가능 
 
+<p v-for="속성 in 속성s" :key="속성.id">// id개수 만큼 찍힌다.
+만약 오류줄 생성시  v-bind:key="속성" 추가
+
+<img : src="속성.img" :alt="속성">
+
+v-model // input입력된 text 값을 바로 뷰인스턴스안에 맵핑
+
+@click="함수(속성.id)//사용할 값만 넘기거나 전부넘기는 것이 가능"
+methods
+함수(id//불러온다){
+
+} 
+localStorage.setItem(key, value); //localStorage mdn 참조
+
+v-on:keyup.enter="함수" //엔터키를 누를시 이벤트 발생
+
+!-/vue 라이플 사이클/-
+
+다음시간 TodoList 삭제부터
+created // 인스턴스가 생성되자마자 실행되는 라이플사이클 이벤트

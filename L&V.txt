@@ -44,11 +44,11 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-원하는곳에 id박고 - 최상위 폴더에 1번만 박으면 된다
+원하는곳에 id박고 - 최상위 폴더에 1번만 
 ex) <app/>
 
 
-부트스트랩 ---------로그아웃 오류나면 해줘야함
+부트스트랩 ---------로그아웃 오류
 composer require laravel/ui
 php artisan ui bootstrap
 npm install && npm run dev

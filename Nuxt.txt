@@ -1,0 +1,69 @@
+https://joshua1988.github.io/vue-camp/nuxt/ssr.html
+Tab 자동 import
+Nuxt.js
+--설치할때 테일윈드 같은 프레임워크 미리 깔기!!!!!--
+$ vue init nuxt-community/starter-template <project-name>
+npx -- 스타터팩
+npx create-nuxt-app <project-name>
+npm install --save-dev sass sass-loader@10
+
+assets 
+디렉토리에는 Stylus 또는 Sass 파일, 이미지 글꼴 저장 폴더
+
+middleware
+서버사이드렌더링을하기전에 실행하는 함수
+plugins api ... 등등
+//파일은 설치시 없을경우 그냥 만들어 주면된다.
+
+store
+// vuex의 store
+
+<Nuxt/> = <router-view> --> .nuxt/layout/default.vue
+<NuxtLink to="/"/> = <router-link/>
+
+error page
+layout/error.vue
+backend 파일 클론 git clone -주소- .
+
+axios
+npm install axios
+<script> import axios from 'axios';
+  async 함수이름( ) {
+	const response= await axios.get('api 주소')
+	// console.log ( 변수 )
+	this.속성 = response.data +.map( )//배열요소 변형가능
+  },
+ data(){
+    return {
+	속성 : [ ],	
+	    }
+	}            // 일반적인 방법
+
+Nuxt의 비동기 데이터 호출
+asyncData // 서버사이드렌더링 pages 밑에서만 사용
+ async asyncData( ) {
+	const response = await axios.get('api 주소')
+	const 속성 = response.data
+	return = { 속성 } // data와 같다
+			},
+
+함수의 앞에 async
+코드 앞에 await 
+콜백x 가독성 증가
+
+포트번호 변경
+nuxt.config.js
+  server: {
+    port: 5000,
+  },
+
+Preference -> Keyboard Shortcuts
+동적 라우팅
+this.$router.push('main/${id}') // 기본적으로 라우터 정보를 받을수 있다.
+touch _id.vue//어떤 id값이 들어와도 이쪽으로 들어온다. 
+_라우터의 파라미터
+
+// nuxt.config.js
+css: [
+  '~assets/scss/app.scss'
+],

@@ -1,0 +1,7 @@
+npm init -y
+npm install jquery --> npm i jquery // 배포용 라이브러리
+npm install jquery --save-dev -->npm i vue -D //개발용 라이브러리
+npm ununstall jquery //삭제
+--global 전역 설치 -g//
+dependencies // 에플리케이션 동작을 도와주는 도구
+devDependencies // 개발을 도와주는 라이브러리 ex)sass, webpack

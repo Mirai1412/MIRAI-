@@ -1,0 +1,66 @@
+// 내컴퓨터의 깃 정보 -글로벌
+git config --global user.name "이름"
+git config --global user.email "이메일"
+git config --list // 정보보기
+
+git add -> git commit -> git push ->
+   git pull = git merge <- git fetch <-					
+
+깃 연동 -원격저장소
+git init // 깃파일만들고
+git remote add origin 주소 // 레파지토리 연동
+git remote remove origin // 연동 끊기
+git pull origin master // 안에 파일들 받아옴
+
+   -- Traking 순서 --
+깃 푸쉬
+git status 상태확인
+git add . 전부추가
+git add 파일명
+git commit -m "message"
+git push
+git push origin master 전부 넣기
+git push origin +master 강제 푸쉬
+
+rm -r .git을 입력하면 .git 폴더가 삭제되며 
+Git 로컬 저장소 지정을 해제한다.
+
+git clone 주소// 저장소에있는 모든파일이 다운로드
+git commit -m "message"
+git push
+
+파일 생성
+git clone
+코드 추가및 수정
+git add 파일 //git status 파일 상태 확인
+git reset 파일 // add 로 추가한 파일을 내린다
+git commit -m " "
+git push
+git log //push한 파일들 확인가능 q로 그만보기
+git reset --hard(나머지는 삭제 옵션) ex)90d4038f13
+git push -f //강제 push
+git commit --amend // commit 설명 수정가능 
+:wq! 저장 후 종료 - 리눅스 명령어와 동일
+
+git branch  //현재 브렌치 종류가 뜬다
+git branch 파일이름 //브랜치 생성
+git checkout 파일이름 // 원하는 파일을 바라본다
+git merge //파일합체 branch 파일을 master파일로
+git branch -d 파일이름 // 브랜치 삭제
+
+git branch -v
+// commit 후
+git checkout master
+git merge header
+git push origin master
+
+- master 브랜치와 다른 브랜치 내용이 다를경우 병합-
+git merge 브랜치이름
+// 다른부분에 코드가 뜨고 선택할수있다.
+git add . git commit -m " " // 선택후 커밋
+
+git rebase -i HEAD~3 // 최근 3개 커밋내용확인
+rebase // 커밋내용을 수정/삭제
+
+설정
+콜라보

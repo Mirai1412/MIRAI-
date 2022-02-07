@@ -1,0 +1,12 @@
+HTML
+<meta name = "메타 요소의 유형" content="실제 메타 콘텐츠 지정">
+// name="description" content="검색 엔진"
+CSS <link rel="stylesheet" href="my-css-file.css">
+JavaScript <script src="my-js-file.js" defer></script>
+<p lang="en-US"> // 언어설정
+<a href="..." title="abc">
+<code>: 컴퓨터 코드의 일반 부품 표시용
+<pre>: 공백 유지(일반적으로 코드 블록)
+<time datetime="2016-01-20">20 January 2016</time> // 시간및 날짜
+Viewport // 반응형 엔터테이먼트
+<meta name="viewport" content="width=devic-width, initial-scale=1"
